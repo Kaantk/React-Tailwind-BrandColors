@@ -4,7 +4,6 @@ import { selectedBrands } from "~/store/brands/hooks";
 
 export default function Search() {
   const selectBrands = selectedBrands();
-  console.log(selectBrands);
 
   return (
     <div className="h-[55px] w-[2027px] border-b-[1px] border-gray-light fixed top-0 px-[15px] flex items-center z-10 bg-white">
@@ -19,8 +18,10 @@ export default function Search() {
       <div className="ml-auto flex items-center">
         <div
           className={classNames(
-            "flex items-center gap-2 pr-[15px] border-r-[1px] border-gray-light mr-[15px] pointer-events-none opacity-30",
-            { "opacity-100 pointer-events-auto": selectBrands.length > 0 }
+            "flex items-center gap-2 pr-[15px] border-r-[1px] border-gray-light mr-[15px] pointer-events-none opacity-25",
+            {
+              "opacity-95 pointer-events-auto": selectBrands.length > 0,
+            }
           )}
         >
           <button>
@@ -33,7 +34,7 @@ export default function Search() {
             <BiX className="h-[23px] w-[23px] text-color-primary hover:text-[#000]" />
           </button>
           <div className="text-color-primary text-[14px]">
-            0 brands collected
+            {selectBrands.length} brands collected
           </div>
         </div>
         <div className="flex items-center group gap-2">
