@@ -2,7 +2,6 @@ import { addBrand, removeBrand } from "~/store/brands/actions";
 import ColorButton from "./color-button";
 import { selectedBrands } from "~/store/brands/hooks";
 import { useState } from "react";
-import Done from "~/assets/icons/done.png";
 import classNames from "classnames";
 import DateFormatter from "~/helpers/dateFormatter";
 
@@ -33,11 +32,16 @@ export default function Brand({ brand }) {
       className="ml-[15px] border-b-[1px] border-gray-light text-color-secondary text-xl py-[15px] pr-[15px] flex cursor-pointer relative"
     >
       {selectBrand && (
-        <img
-          src={Done}
-          alt="Done icon"
-          className="w-6 h-6 bg-wihte absolute top-6 -left-[26px] bg-white py-0.5"
-        />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 -960 960 960"
+          className="w-6 h-6 bg-wihte absolute top-6 -left-[26px] bg-white text-blue-normal py-0.5"
+        >
+          <path
+            fill="currentColor"
+            d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"
+          />
+        </svg>
       )}
       <div className="flex flex-col w-[400px] mr-5 my-2">
         <p
