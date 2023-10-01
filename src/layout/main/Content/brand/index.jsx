@@ -1,13 +1,19 @@
 import { addBrand, removeBrand } from "~/store/brands/actions";
 import ColorButton from "./color-button";
 import { selectedBrands } from "~/store/brands/hooks";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import classNames from "classnames";
 import DateFormatter from "~/helpers/dateFormatter";
 
 export default function Brand({ brand }) {
   const selectBrandsArray = selectedBrands();
   const [selectBrand, setSelectBrand] = useState(false);
+
+  useEffect(() => {
+    if (selectBrandsArray.length === 0) {
+      setSelectBrand(false);
+    }
+  }, [selectBrandsArray]);
 
   const toggleBrandSelection = (brand) => {
     const isBrandAlreadySelected = selectBrandsArray.some(
