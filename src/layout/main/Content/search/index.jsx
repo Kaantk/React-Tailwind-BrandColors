@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import { clearBrand } from "~/store/brands/actions";
 import { selectedBrands } from "~/store/brands/hooks";
-import { Popover } from "@headlessui/react";
+import Download from "./download";
 
 export default function Search() {
   const selectBrands = selectedBrands();
@@ -34,60 +34,7 @@ export default function Search() {
             }
           )}
         >
-          <Popover className="relative">
-            <Popover.Button className="outline-none">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 -960 960 960"
-                className="h-[23px] w-[23px] text-color-primary hover:text-[#000]"
-              >
-                <path
-                  fill="currentColor"
-                  d="M160-120v-80h640v80H160Zm320-160L280-480l56-56 104 104v-408h80v408l104-104 56 56-200 200Z"
-                />
-              </svg>
-            </Popover.Button>
-
-            <Popover.Panel
-              className="absolute z-10 bg-white flex flex-col border-[1px] rounded-lg text-[14px] overflow-hidden items-start w-[80px] opacity-100"
-              style={{
-                boxShadow:
-                  "box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;",
-              }}
-            >
-              <button
-                href="/analytics"
-                className="hover:bg-blue-normal hover:text-white"
-              >
-                ASE (Adobe)
-              </button>
-              <button
-                href="/analytics"
-                className="hover:bg-blue-normal hover:text-white w-full flex items-start"
-              >
-                CSS
-              </button>
-              <button
-                href="/analytics"
-                className="hover:bg-blue-normal hover:text-white w-full flex items-start"
-              >
-                SCSS
-              </button>
-              <button
-                href="/analytics"
-                className="hover:bg-blue-normal hover:text-white w-full flex items-start"
-              >
-                LESS
-              </button>
-              <button
-                href="/analytics"
-                className="hover:bg-blue-normal hover:text-white w-full flex items-start"
-              >
-                Stylus
-              </button>
-            </Popover.Panel>
-          </Popover>
-          <button></button>
+          <Download />
           <button
             onClick={() => {
               const url = `http://localhost:5173/${
@@ -125,62 +72,7 @@ export default function Search() {
           </div>
         </div>
         <div className="flex items-center group">
-          <Popover className="relative">
-            <Popover.Button className="outline-none flex items-center gap-2">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 -960 960 960"
-                className="h-[23px] w-[23px] text-color-primary group-hover:text-[#000]"
-              >
-                <path
-                  fill="currentColor"
-                  d="M160-120v-80h640v80H160Zm320-160L280-480l56-56 104 104v-408h80v408l104-104 56 56-200 200Z"
-                />
-              </svg>
-              <div className="text-color-primary group-hover:text-[#000] text-[14px]">
-                All Brands
-              </div>
-            </Popover.Button>
-
-            <Popover.Panel
-              className="absolute z-10 bg-white flex flex-col border-[1px] rounded-lg text-[14px] overflow-hidden items-start w-[80px] opacity-100"
-              style={{
-                boxShadow:
-                  "box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;",
-              }}
-            >
-              <button
-                href="/analytics"
-                className="hover:bg-blue-normal hover:text-white"
-              >
-                ASE (Adobe)
-              </button>
-              <button
-                href="/analytics"
-                className="hover:bg-blue-normal hover:text-white w-full flex items-start"
-              >
-                CSS
-              </button>
-              <button
-                href="/analytics"
-                className="hover:bg-blue-normal hover:text-white w-full flex items-start"
-              >
-                SCSS
-              </button>
-              <button
-                href="/analytics"
-                className="hover:bg-blue-normal hover:text-white w-full flex items-start"
-              >
-                LESS
-              </button>
-              <button
-                href="/analytics"
-                className="hover:bg-blue-normal hover:text-white w-full flex items-start"
-              >
-                Stylus
-              </button>
-            </Popover.Panel>
-          </Popover>
+          <Download />
         </div>
       </div>
     </div>
